@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
-import { Employee, Client, Team, ScheduleEntry, MediaFile, Report, ChatMessage } from '../types';
+import { Employee, Client, Team, ScheduleEntry, MediaFile, Report, ChatMessage } from '../types/index';
 
 interface AppDataContextType {
   employees: Employee[];

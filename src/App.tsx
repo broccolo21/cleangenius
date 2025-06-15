@@ -8,16 +8,11 @@ import { EmployeeManagement } from './components/Admin/EmployeeManagement';
 import { ClientManagement } from './components/Admin/ClientManagement';
 import { ScheduleManagement } from './components/Admin/ScheduleManagement';
 import { LiveTracking } from './components/Admin/LiveTracking';
-import { ClientManagement } from './components/Admin/ClientManagement';
-import { ScheduleManagement } from './components/Admin/ScheduleManagement';
-import { LiveTracking } from './components/Admin/LiveTracking';
 import { MediaAnalysis } from './components/Admin/MediaAnalysis';
 import { ReportsManagement } from './components/Admin/ReportsManagement';
 import { Settings } from './components/Admin/Settings';
 import { MySchedule } from './components/Employee/MySchedule';
 import { CameraCapture } from './components/Employee/CameraCapture';
-import { Navigation } from './components/Employee/Navigation';
-import { GestureMonitoring } from './components/Employee/GestureMonitoring';
 import { Navigation } from './components/Employee/Navigation';
 import { GestureMonitoring } from './components/Employee/GestureMonitoring';
 import { ChatInterface } from './components/Chat/ChatInterface';
@@ -60,12 +55,6 @@ function App() {
           return <ScheduleManagement />;
         case 'tracking':
           return <LiveTracking />;
-        case 'clients':
-          return <ClientManagement />;
-        case 'schedule':
-          return <ScheduleManagement />;
-        case 'tracking':
-          return <LiveTracking />;
         case 'media':
           return <MediaAnalysis />;
         case 'reports':
@@ -86,10 +75,6 @@ function App() {
           return <MySchedule />;
         case 'camera':
           return <CameraCapture />;
-        case 'navigation':
-          return <Navigation />;
-        case 'gestures':
-          return <GestureMonitoring />;
         case 'navigation':
           return <Navigation />;
         case 'gestures':

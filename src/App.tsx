@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import { useAuth } from './contexts/AuthContext';
-import { LoginForm } from '../LoginForm';
-import { Header } from '../Header';
-import { Sidebar } from '../Sidebar';
-import { Dashboard } from '../Dashboard';
-import { EmployeeManagement } from '../EmployeeManagement';
-import { MediaAnalysis } from '../MediaAnalysis';
-import { MySchedule } from '../MySchedule';
-import { CameraCapture } from '../CameraCapture';
-import { ChatInterface } from '../ChatInterface';
-import { ClientReports } from '../ClientReports';
+import { LoginForm } from './components/Auth/LoginForm';
+import { Header } from './components/Layout/Header';
+import { Sidebar } from './components/Layout/Sidebar';
+import { Dashboard } from './components/Admin/Dashboard';
+import { EmployeeManagement } from './components/Admin/EmployeeManagement';
+import { ClientManagement } from './components/Admin/ClientManagement';
+import { ScheduleManagement } from './components/Admin/ScheduleManagement';
+import { LiveTracking } from './components/Admin/LiveTracking';
+import { MediaAnalysis } from './components/Admin/MediaAnalysis';
+import { MySchedule } from './components/Employee/MySchedule';
+import { CameraCapture } from './components/Employee/CameraCapture';
+import { Navigation } from './components/Employee/Navigation';
+import { ChatInterface } from './components/Chat/ChatInterface';
+import { ClientReports } from './components/Client/ClientReports';
 
 function App() {
   const { user, isLoading } = useAuth();
@@ -38,6 +42,12 @@ function App() {
           return <Dashboard />;
         case 'employees':
           return <EmployeeManagement />;
+        case 'clients':
+          return <ClientManagement />;
+        case 'schedule':
+          return <ScheduleManagement />;
+        case 'tracking':
+          return <LiveTracking />;
         case 'media':
           return <MediaAnalysis />;
         case 'chat':
@@ -54,6 +64,8 @@ function App() {
           return <MySchedule />;
         case 'camera':
           return <CameraCapture />;
+        case 'navigation':
+          return <Navigation />;
         case 'chat':
           return <ChatInterface />;
         default:

@@ -12,6 +12,7 @@ import { MediaAnalysis } from './components/Admin/MediaAnalysis';
 import { MySchedule } from './components/Employee/MySchedule';
 import { CameraCapture } from './components/Employee/CameraCapture';
 import { Navigation } from './components/Employee/Navigation';
+import { GestureMonitoring } from './components/Employee/GestureMonitoring';
 import { ChatInterface } from './components/Chat/ChatInterface';
 import { ClientReports } from './components/Client/ClientReports';
 
@@ -66,6 +67,8 @@ function App() {
           return <CameraCapture />;
         case 'navigation':
           return <Navigation />;
+        case 'gestures':
+          return <GestureMonitoring />;
         case 'chat':
           return <ChatInterface />;
         default:

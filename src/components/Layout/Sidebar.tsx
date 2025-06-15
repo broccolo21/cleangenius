@@ -10,7 +10,8 @@ import {
   MessageSquare,
   Settings,
   Clock,
-  Navigation
+  Navigation,
+  Hand
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -37,6 +38,7 @@ export function Sidebar({ activeSection, onSectionChange }: SidebarProps) {
     { id: 'schedule', label: 'I Miei Impegni', icon: Clock },
     { id: 'camera', label: 'Foto & Video', icon: Camera },
     { id: 'navigation', label: 'Navigazione', icon: Navigation },
+    { id: 'gestures', label: 'Monitoraggio Gesti', icon: Hand },
     { id: 'chat', label: 'Chat', icon: MessageSquare },
   ];
 

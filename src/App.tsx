@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { useAuth } from './contexts/AuthContext';
-import { LoginForm } from './components/Auth/LoginForm';
-import { Header } from './components/Layout/Header';
-import { Sidebar } from './components/Layout/Sidebar';
-import { Dashboard } from './components/Admin/Dashboard';
-import { EmployeeManagement } from './components/Admin/EmployeeManagement';
-import { MediaAnalysis } from './components/Admin/MediaAnalysis';
-import { MySchedule } from './components/Employee/MySchedule';
-import { CameraCapture } from './components/Employee/CameraCapture';
-import { ChatInterface } from './components/Chat/ChatInterface';
-import { ClientReports } from './components/Client/ClientReports';
+import { LoginForm } from '../LoginForm';
+import { Header } from '../Header';
+import { Sidebar } from '../Sidebar';
+import { Dashboard } from '../Dashboard';
+import { EmployeeManagement } from '../EmployeeManagement';
+import { MediaAnalysis } from '../MediaAnalysis';
+import { MySchedule } from '../MySchedule';
+import { CameraCapture } from '../CameraCapture';
+import { ChatInterface } from '../ChatInterface';
+import { ClientReports } from '../ClientReports';
 
 function App() {
   const { user, isLoading } = useAuth();

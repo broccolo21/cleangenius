@@ -8,9 +8,16 @@ import { EmployeeManagement } from './components/Admin/EmployeeManagement';
 import { ClientManagement } from './components/Admin/ClientManagement';
 import { ScheduleManagement } from './components/Admin/ScheduleManagement';
 import { LiveTracking } from './components/Admin/LiveTracking';
+import { ClientManagement } from './components/Admin/ClientManagement';
+import { ScheduleManagement } from './components/Admin/ScheduleManagement';
+import { LiveTracking } from './components/Admin/LiveTracking';
 import { MediaAnalysis } from './components/Admin/MediaAnalysis';
+import { ReportsManagement } from './components/Admin/ReportsManagement';
+import { Settings } from './components/Admin/Settings';
 import { MySchedule } from './components/Employee/MySchedule';
 import { CameraCapture } from './components/Employee/CameraCapture';
+import { Navigation } from './components/Employee/Navigation';
+import { GestureMonitoring } from './components/Employee/GestureMonitoring';
 import { Navigation } from './components/Employee/Navigation';
 import { GestureMonitoring } from './components/Employee/GestureMonitoring';
 import { ChatInterface } from './components/Chat/ChatInterface';
@@ -18,7 +25,11 @@ import { ClientReports } from './components/Client/ClientReports';
 
 function App() {
   const { user, isLoading } = useAuth();
-  const [activeSection, setActiveSection] = useState('dashboard');
+  const [activeSection, setActiveSection] = useState(() => {
+    if (user?.role === 'admin') return 'dashboard';
+    if (user?.role === 'employee') return 'schedule';
+    return 'reports';
+  });
 
   if (isLoading) {
     return (
@@ -49,10 +60,20 @@ function App() {
           return <ScheduleManagement />;
         case 'tracking':
           return <LiveTracking />;
+        case 'clients':
+          return <ClientManagement />;
+        case 'schedule':
+          return <ScheduleManagement />;
+        case 'tracking':
+          return <LiveTracking />;
         case 'media':
           return <MediaAnalysis />;
+        case 'reports':
+          return <ReportsManagement />;
         case 'chat':
           return <ChatInterface />;
+        case 'settings':
+          return <Settings />;
         default:
           return <Dashboard />;
       }
@@ -65,6 +86,10 @@ function App() {
           return <MySchedule />;
         case 'camera':
           return <CameraCapture />;
+        case 'navigation':
+          return <Navigation />;
+        case 'gestures':
+          return <GestureMonitoring />;
         case 'navigation':
           return <Navigation />;
         case 'gestures':

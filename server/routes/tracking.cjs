@@ -1,5 +1,5 @@
 const express = require('express');
-const { createConnection } = require('../database/init');
+const { createConnection } = require('../database/init.cjs');
 const { authenticateToken, requireRole } = require('../middleware/auth');
 
 const router = express.Router();

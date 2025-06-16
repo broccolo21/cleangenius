@@ -1,6 +1,6 @@
 const express = require('express');
 const { v4: uuidv4 } = require('uuid');
-const { createConnection } = require('../database/init');
+const { createConnection } = require('../database/init.cjs');
 const { authenticateToken, requireRole } = require('../middleware/auth');
 
 const router = express.Router();

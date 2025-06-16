@@ -1,6 +1,6 @@
 const express = require('express');
 const { createConnection } = require('../database/init.cjs');
-const { authenticateToken, requireRole } = require('../middleware/auth');
+const { authenticateToken, requireRole } = require('../middleware/auth.cjs');
 
 const router = express.Router();
 

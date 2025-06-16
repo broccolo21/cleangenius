@@ -9,7 +9,7 @@ const { v4: uuidv4 } = require('uuid');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 3010;
+const PORT = process.env.PORT || 4000;
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
 
 // Middleware
@@ -372,5 +372,5 @@ app.get('*', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on port 3010`);
+  console.log(`Server running on port ${PORT}`);
 });

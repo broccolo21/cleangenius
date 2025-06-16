@@ -3,7 +3,7 @@ const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
-const { createConnection } = require('../database/init');
+const { createConnection } = require('../database/init.cjs');
 const { authenticateToken, requireRole } = require('../middleware/auth');
 
 const router = express.Router();

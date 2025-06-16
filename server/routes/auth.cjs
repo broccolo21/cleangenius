@@ -1,8 +1,8 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const { v4: uuidv4 } = require('uuid');
-const { createConnection } = require('../database/init');
-const { generateToken, authenticateToken, getUserById } = require('../middleware/auth');
+const { createConnection } = require('../database/init.cjs');
+const { generateToken, authenticateToken, getUserById } = require('../middleware/auth.cjs');
 
 const router = express.Router();
 

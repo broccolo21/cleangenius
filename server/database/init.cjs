@@ -161,6 +161,23 @@ async function initializeDatabase() {
         FOREIGN KEY (schedule_entry_id) REFERENCES schedule_entries(id) ON DELETE SET NULL
       );
 
+      -- Attendance records table
+      CREATE TABLE IF NOT EXISTS attendance_records (
+        id TEXT PRIMARY KEY,
+        employee_id TEXT NOT NULL,
+        date DATE NOT NULL,
+        clock_in DATETIME,
+        clock_out DATETIME,
+        break_start DATETIME,
+        break_end DATETIME,
+        status TEXT CHECK(status IN ('present', 'absent', 'vacation', 'sick', 'permission')) NOT NULL,
+        notes TEXT,
+        total_hours REAL,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (employee_id) REFERENCES users(id) ON DELETE CASCADE
+      );
+
       -- Create indexes for better performance
       CREATE INDEX IF NOT EXISTS idx_users_email ON users(email);
       CREATE INDEX IF NOT EXISTS idx_users_role ON users(role);
@@ -171,6 +188,8 @@ async function initializeDatabase() {
       CREATE INDEX IF NOT EXISTS idx_location_timestamp ON location_tracking(timestamp);
       CREATE INDEX IF NOT EXISTS idx_chat_sender ON chat_messages(sender_id);
       CREATE INDEX IF NOT EXISTS idx_chat_recipient ON chat_messages(recipient_id);
+      CREATE INDEX IF NOT EXISTS idx_attendance_employee ON attendance_records(employee_id);
+      CREATE INDEX IF NOT EXISTS idx_attendance_date ON attendance_records(date);
     `;
 
     db.exec(createTables, async (err) => {

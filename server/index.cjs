@@ -6,16 +6,16 @@ const path = require('path');
 require('dotenv').config();
 
 // Import routes
-const authRoutes = require('./routes/auth');
-const userRoutes = require('./routes/users');
-const scheduleRoutes = require('./routes/schedule');
-const mediaRoutes = require('./routes/media');
-const chatRoutes = require('./routes/chat');
-const reportsRoutes = require('./routes/reports');
-const trackingRoutes = require('./routes/tracking');
+const authRoutes = require('./routes/auth.cjs');
+const userRoutes = require('./routes/users.cjs');
+const scheduleRoutes = require('./routes/schedule.cjs');
+const mediaRoutes = require('./routes/media.cjs');
+const chatRoutes = require('./routes/chat.cjs');
+const reportsRoutes = require('./routes/reports.cjs');
+const trackingRoutes = require('./routes/tracking.cjs');
 
 // Import database initialization
-const { initializeDatabase } = require('./database/init');
+const { initializeDatabase } = require('./database/init.cjs');
 
 const app = express();
 const PORT = process.env.PORT || 3001;

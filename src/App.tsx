@@ -5,6 +5,7 @@ import { Header } from './components/Layout/Header';
 import { Sidebar } from './components/Layout/Sidebar';
 import { Dashboard } from './components/Admin/Dashboard';
 import { EmployeeManagement } from './components/Admin/EmployeeManagement';
+import { AttendanceManagement } from './components/Admin/AttendanceManagement';
 import { ClientManagement } from './components/Admin/ClientManagement';
 import { ScheduleManagement } from './components/Admin/ScheduleManagement';
 import { LiveTracking } from './components/Admin/LiveTracking';
@@ -49,6 +50,8 @@ function App() {
           return <Dashboard />;
         case 'employees':
           return <EmployeeManagement />;
+        case 'attendance':
+          return <AttendanceManagement />;
         case 'clients':
           return <ClientManagement />;
         case 'schedule':

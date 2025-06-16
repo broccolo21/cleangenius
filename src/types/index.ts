@@ -86,3 +86,16 @@ export interface ChatMessage {
   type: 'text' | 'image' | 'file';
   isRead: boolean;
 }
+
+export interface AttendanceRecord {
+  id: string;
+  employeeId: string;
+  date: Date;
+  clockIn?: Date;
+  clockOut?: Date;
+  breakStart?: Date;
+  breakEnd?: Date;
+  status: 'present' | 'absent' | 'vacation' | 'sick' | 'permission';
+  notes?: string;
+  totalHours?: number;
+}

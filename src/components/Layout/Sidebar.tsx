@@ -25,6 +25,7 @@ export function Sidebar({ activeSection, onSectionChange }: SidebarProps) {
   const adminSections = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { id: 'employees', label: 'Dipendenti', icon: Users },
+    { id: 'attendance', label: 'Presenze', icon: Clock },
     { id: 'clients', label: 'Clienti', icon: Users },
     { id: 'schedule', label: 'Calendario', icon: Calendar },
     { id: 'tracking', label: 'Mappa Live', icon: MapPin },
